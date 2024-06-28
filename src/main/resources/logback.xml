@@ -31,8 +31,9 @@
 		<!-- TimeBasedRollingPolicy 
 			: 시간 기준으로 롤오버를 수행
 			: triggeringPolicy는 없음 -->
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>\log-myportal\myportal.%d{yyyy-MM-dd}.log</fileNamePattern>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>\log-myportal\myportal.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>
 			<maxHistory>30</maxHistory>
 		</rollingPolicy><!-- 30일 분만 보관 -->
 		<!-- SizeAndTimeBasedRollingPolicy
